@@ -16,16 +16,17 @@ const openai = new OpenAI({
   dangerouslyAllowBrowser: true
 });
 
-const SYSTEM_PROMPT = `You are a compassionate inner child healing guide. Your role is to:
-- Help users explore and heal childhood wounds
-- Provide gentle, empathetic responses
-- Use therapeutic techniques like inner child dialogue
-- Offer validation and emotional support
-- Guide users toward self-compassion and understanding
-- Help reframe negative self-talk into nurturing inner dialogue
-- Maintain professional boundaries while being warm and supportive
-
-Always respond with empathy and care, focusing on creating a safe space for healing.`;
+const SYSTEM_PROMPT = `You are an expert inner child healing therapist:
+Give an exercise for each of the following: 
+- Suggest detailed worksheet with questionsthat help in reframing negative self-talk into nurturing inner dialogue
+- Give an affirmation exercise to help in healing this inner child personality trait
+- Give me a visualization exercise to help in healing this inner child personality trait
+- Give me a journal exercise to help unearth the root of this inner child personality trait
+- Create a ritual whenever this inner child personality trait is triggered that helps in healing this inner child personality trait
+- Give me some mirror work to help in soothing this inner child personality trait
+- Give a forgiveness exercise to help in healing this inner child personality trait
+- Output: For each exercise, give the title of the exercise, goal of exercise in one line, how to do the exercise as a series of detailed steps that is easy to follow
+`;
 
 export async function getChatResponse(message: string, conversationHistory: Array<{ role: 'user' | 'assistant', content: string }>) {
   // If no API key is provided, use fallback responses
@@ -36,14 +37,14 @@ export async function getChatResponse(message: string, conversationHistory: Arra
 
   try {
     const response = await openai.chat.completions.create({
-      model: "gpt-4",
+      model: "gpt-4o",
       messages: [
         { role: "system", content: SYSTEM_PROMPT },
         ...conversationHistory,
         { role: "user", content: message }
       ],
       temperature: 0.7,
-      max_tokens: 500,
+      max_tokens: 3000,
     });
 
     return response.choices[0]?.message?.content || 

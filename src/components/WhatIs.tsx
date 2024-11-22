@@ -25,7 +25,7 @@ export default function WhatIs() {
             </p>
             <ul className="list-disc list-inside space-y-2">
               <li>Reconnecting with your childhood self</li>
-              <li>Processing unresolved emotional trauma</li>
+              <li>Processing unresolved emotional wounds</li>
               <li>Understanding patterns and behaviors</li>
               <li>Developing self-compassion and nurturing practices</li>
               <li>Creating new, healthy emotional responses</li>
