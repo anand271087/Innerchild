@@ -15,7 +15,7 @@ interface Question {
 const questions: Question[] = [
   {
     id: 1,
-    text: "When faced with a challenging situation, you typically:",
+    text: "When faced with a challenging situation, you typically do this:",
     options: [
       { id: 'A', text: "Feel overwhelmed by emotions from past experiences" },
       { id: 'B', text: "Withdraw and handle it alone" },
