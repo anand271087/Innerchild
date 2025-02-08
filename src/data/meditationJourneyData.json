@@ -1,0 +1,19 @@
+{
+  "days": {
+    "1": {
+      "title": "What helps you feel good?",
+      "journaling": {
+        "duration": "15 minutes",
+        "instructions": [
+          "Write how practicing progressive muscle relaxation has impacted your mind, body, and your day",
+          "Write about how regular meditation and relaxation can possibly impact your life in 15 days, in 1 month, and in 6 months",
+          "Write a promise to yourself resolving to meditate regularly for the next 1 month"
+        ]
+      },
+      "meditation": {
+        "duration": "15 minutes",
+        "type": "Progressive muscle relaxation"
+      }
+    }
+  }
+}
